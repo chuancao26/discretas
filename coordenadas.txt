@@ -1,0 +1,36 @@
+#include <ctime>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+struct coord{
+	int x;
+	int y; 
+	
+};
+coord inicializa_punto1()	
+{   coord t0;
+	t0.x = rand()%1024;
+	t0.y = rand()%768;
+	return t0;
+}
+coord inicializa_punto2(int x1, int y1)
+{
+	coord t0;
+	t0.x = x1;
+	t0.y = y1;
+	return t0;
+}
+int main()
+{   coord pt[2]; 
+	coord pt1, pt2;
+	srand((unsigned) time(0)); // cambiar la semilla
+	pt[0] = inicializa_punto1();
+	pt[1] = inicializa_punto2(40, 40);
+	cout << " pt1.x=" << pt[0].x << " pt1.y=" << pt[0].y << endl;
+	//int x,y;
+	//x = pt2.x;
+	//y = pt2.y;
+	cout << " pt2.x=" << pt[1].x << " pt2.y=" << pt[1].y << endl;
+	return 0;
+}
